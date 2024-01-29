@@ -1,0 +1,86 @@
+.section-article-group-9 {
+    h2 {
+        margin-top: 0;
+        padding: rem-calc(15px 0);
+        color: $secondary-color;
+        border-top: 0.5px solid $gray;
+        border-bottom: 0.5px solid $light-gray;
+        font-size: rem-calc(25px);
+        line-height: rem-calc(21px);
+        font-family: $font-readex;
+        font-weight: $font-semi-bold;
+    }
+    .article-grid {
+        @include breakpoint(small) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px 60px;
+        }
+        .article-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            border-bottom: 0.5px solid $light-gray;
+            @include breakpoint(small) {
+                margin-bottom: 0;
+            }
+            &:first-child {
+                &:after { 
+                    display: none;
+                }
+            }
+           &:nth-child(4){
+                &:after { 
+                    display: none;
+                }
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -30px;
+                width: 1px;
+                height: calc(100% - 30px);
+                background-color: $light-gray;
+               
+            }
+            .article-category {
+                color: #8E2218;
+                font-family: $font-readex;
+                font-size: rem-calc(13px);
+                font-weight: $font-medium;
+                margin: 0;
+                line-height: normal;
+                    &.live-top {
+                        display: flex;
+                        gap: rem-calc(15px);
+                        align-items: center;
+                        
+                    }
+            }
+         
+            h3 {
+                margin-top: 10px;
+                a {
+                    color: $primary-color;
+                    font-family: $font-mizan-semi-bold;
+                    font-size: rem-calc(24px);
+                    line-height: rem-calc(28px);
+                    font-weight: 600;
+                }
+            }
+            p {
+                color: #404040;
+                font-family: $font-mizan;
+                font-size: rem-calc(22px);
+                line-height: rem-calc(26px);
+            }
+            img {
+                display: block;
+                width: 100%;
+                height: 165px;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+.section-editors-picks {
+
+    h3 {
+        padding: rem-calc(20px 0);
+        font-family: $font-readex;
+        font-size: rem-calc(25px);
+        font-weight: $font-semi-bold;
+        color: $secondary-color;
+        border-bottom: 0.5px solid #D9D9D9;
+        border-top: 0.5px solid $primary-color;
+        line-height: rem-calc(14px);
+        margin-bottom: 15px;
+
+    }
+
+    h4 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: $font-mizan-semi-bold;
+        font-size: rem-calc(28px);
+        line-height: rem-calc(32px);
+
+        a {
+            color: $black;
+
+            @include breakpoint(small) {
+                font-size: rem-calc(38px);
+                line-height: rem-calc(42px);
+
+            }
+        }
+    }
+
+    img {
+        display: block;
+        width: 105px;
+        height: 65px;
+        object-fit: cover;
+
+        @include breakpoint(small) {
+            width: 100%;
+            height: 165px;
+        }
+    }
+
+
+
+    .editors-wrapper {
+        padding: 15px 0;
+        border-bottom: 0.5px solid $light-gray;
+        display: grid;
+
+        @include breakpoint(small) {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: rem-calc(60px);
+
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        .editors-text-wrapper {
+            max-width: 580px;
+            order: 2;
+
+            @include breakpoint(small) {
+                order: 1;
+            }
+        }
+
+        .image-wrapper {
+            padding-left: rem-calc(30px);
+            order: 1;
+
+            .image-copyright {
+                text-align: right;
+                display: none;
+
+                @include breakpoint(small) {
+                    text-align: left;
+                    display: block;
+                }
+            }
+        }
+
+        .editors-category {
+            line-height: 1;
+            margin-top: 15px;
+
+            @include breakpoint(small) {
+                margin-top: 0;
+            }
+
+            a {
+                font-family: $font-readex;
+                font-size: rem-calc(13px);
+                font-weight: $font-medium;
+                color: #8E2218;
+                line-height: normal;
+            }
+        }
+    }
+}

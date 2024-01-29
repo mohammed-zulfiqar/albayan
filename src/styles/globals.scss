@@ -1,0 +1,202 @@
+$white: #ffffff;
+$black: #000000;
+$primary-color: #420900;
+$secondary-color: #751713;
+$red: #FF1B02;
+$gray: #A3A3A4;
+$dark-gray: #484849;
+$light-gray: #E4E4E4;
+
+
+$small-size: 800px;
+$medium-size: 1024px;
+$large-size: 1050px;
+$xlarge-size: 1440px;
+
+$box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
+
+$border-radius: 5px;
+$border-radius-round: 100px;
+
+$font-size-base: 18px;
+
+
+// Media queries 
+@mixin breakpoint($size) {
+    @if $size ==small-only {
+        @media (max-width: $small-size) {
+            @content;
+        }
+    }
+
+    @else if $size ==small {
+        $font-size-base: 18px;
+
+        @media (min-width: $small-size) {
+            @content;
+        }
+    }
+
+    @else if $size ==medium {
+        @media (min-width: $medium-size) {
+            @content;
+        }
+    }
+
+    @else if $size ==large {
+        @media (min-width: $large-size) {
+            @content;
+        }
+    }
+
+    @else if $size ==xlarge {
+        @media (min-width: $xlarge-size) {
+            @content;
+        }
+    }
+}
+
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+
+    @if ($value ==0rem) {
+        $value: 0;
+    }
+
+    // Turn 0rem into 0
+    @return $value;
+}
+
+@function rem-calc($values, $base-value: $font-size-base) {
+    $max: length($values);
+
+    @if $max ==1 {
+        @return convert-to-rem(nth($values, 1), $base-value);
+    }
+
+    $remValues: (
+    );
+
+@for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+}
+
+@return $remValues;
+}
+
+
+body {
+    font-family: $font-body;
+    font-size: $font-size-base;
+}
+
+
+h1 {
+    font-family: $font-mizan-semi-bold;
+    font-size: rem-calc(48px);
+    line-height: rem-calc(54px);
+}
+
+p {
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.canvas {
+    background: $white;
+
+    @include breakpoint(small) {
+        max-width: $xlarge-size;
+        margin: 0 auto;
+    }
+}
+
+
+.container {
+
+    padding: 0 30px;
+
+    @include breakpoint(small) {
+        position: relative;
+        max-width: $large-size;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+
+figure {
+    position: relative;
+    height: fit-content;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    figcaption {
+        margin-top: 7px;
+        font-family: $font-readex;
+        font-size: rem-calc(12px);
+        line-height: rem-calc(20px);
+
+        font-weight: $font-medium;
+        color: $primary-color;
+    }
+
+    .image-copyright {
+        margin-top: rem-calc(2px);
+        font-family: $font-readex;
+        font-size: rem-calc(8px);
+        font-weight: $font-regular;
+        letter-spacing: 1px;
+        text-align: left;
+        color: $secondary-color;
+    }
+
+    .watch-live {
+        position: absolute;
+        top: calc(100% - 60px);
+        left: 15px;
+        background-image: url(../images/youtub.svg);
+        background-size: cover;
+        cursor: pointer;
+        width: 75px;
+        height: 25px;
+
+        @include breakpoint(small) {
+            width: 127px;
+            height: 43px;
+            top: calc(100% - 85px);
+            left: 30px;
+        }
+    }
+}
+
+
+.separator {
+    height: 30px;
+
+    @include breakpoint(small) {
+        height: 60px;
+    }
+}
+
+
+.page-title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: $font-mizan-semi-bold;
+    font-size: rem-calc(70px);
+    line-height: 1.5;
+    color: #8E2218;
+    text-align: center;
+    border-top: 0.5px solid $black;
+    border-bottom: 0.5px solid #D9D9D9;
+}

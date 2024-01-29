@@ -1,0 +1,56 @@
+.section-author {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    position: relative;
+    padding-right: 15px;
+    font-family: $font-readex;
+    line-height: 1;
+
+    @include breakpoint(small) {
+        margin-top: 0;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: $light-gray;
+    }
+
+    h4 {
+        margin: 0;
+        margin-bottom: rem-calc(5px);
+        font-size: rem-calc(16px);
+        font-weight: $font-semi-bold;
+        line-height: rem-calc(20px);
+        color: $primary-color;
+
+        a {
+            color: $primary-color;
+        }
+    }
+
+    .post-time {
+        font-size: rem-calc(12px);
+        color: #404040;
+        line-height: normal;
+        font-weight: 400;
+    }
+
+    .post-from {
+        font-size: rem-calc(12px);
+        line-height: 1;
+        color: #707070;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: $border-radius-round;
+        text-align: left;
+    }
+}

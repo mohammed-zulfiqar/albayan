@@ -1,0 +1,426 @@
+.section-most-read {
+    display: none;
+
+    @include breakpoint(small) {
+        display: block;
+    }
+
+    .category-tabs {
+        position: relative;
+        border-top: 0.5px solid $primary-color;
+
+        .title-wrapper {
+            margin: 0;
+            position: absolute;
+            color: $secondary-color;
+            font-family: $font-readex;
+            font-weight: $font-semi-bold;
+            font-size: 16.25px;
+            line-height: 9.1px;
+            top: 19px;
+
+            @include breakpoint(small) {
+                font-size: rem-calc(25px);
+                line-height: rem-calc(14px);
+                top: 19px;
+            }
+        }
+
+        .react-tabs__tab-list {
+            border: none;
+            text-align: left;
+            border-bottom: 0.5px solid #d9d9d9;
+            padding: 10px 0 13px 0;
+
+            li {
+                color: $primary-color;
+                margin: 0 19px 0 0;
+                padding: 0;
+                font-family: $font-readex;
+                font-size: 14px;
+                font-weight: $font-semi-bold;
+
+                &:hover {
+                    border-bottom: 1px solid $red;
+                    text-decoration: none;
+                }
+            }
+
+            .react-tabs__tab--selected {
+                border-bottom: 1px solid $red;
+                border-top: 0px;
+                border-left: 0px;
+                border-right: 0px;
+
+            }
+        }
+
+        .heading-tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            div a {
+                color: #707070;
+                margin-right: 20px;
+                font-weight: 600;
+                font-size: 25px;
+
+                &:hover {
+                    border-bottom: 1px solid $red;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .most-read-articles {
+        padding: rem-calc(0 30px);
+        margin-top: 30px;
+        display: grid;
+        gap: rem-calc(30px);
+        grid-template-columns: repeat(2, 1fr);
+
+        @include breakpoint(small) {
+            margin-top: 15px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: rem-calc(60px);
+
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        .most-read-item {
+            display: flex;
+            flex-direction: column;
+
+            .image-wrapper {
+                display: flex;
+                flex-direction: row;
+
+                span {
+                    background-color: $red;
+                    margin-top: 0px;
+                }
+            }
+
+            img {
+                display: block;
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15px;
+                height: 15px;
+                margin-top: 1px;
+                background-color: $primary-color;
+                color: $white;
+                font-family: $font-readex;
+                text-align: center;
+                font-size: rem-calc(9px);
+            }
+
+            .article-category {
+                a {
+                    font-family: $font-readex;
+                    font-size: rem-calc(13px);
+                    font-weight: $font-medium;
+                    color: $secondary-color;
+                }
+            }
+
+            .article-title {
+                margin: 0;
+
+                a {
+                    color: $primary-color;
+                    display: inline-block;
+                    max-width: 300px;
+                    word-break: break-word;
+                    font-family: $font-readex;
+                    font-size: rem-calc(15px);
+                    line-height: rem-calc(19px);
+                    font-weight: $font-semi-bold;
+                }
+            }
+
+            .article-description {
+                font-family: $font-mizan;
+                font-size: rem-calc(18px);
+                line-height: rem-calc(18px);
+                color: #404040;
+                display: none;
+
+                @include breakpoint(small) {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.section-most-read-slider-mobile {
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include breakpoint(small) {
+        display: none;
+        padding-bottom: 60px;
+    }
+
+    .swiper {
+        overflow-y: visible;
+        margin-top: 30px;
+
+        .swiper-pagination {
+            bottom: -30px;
+        }
+    }
+
+    .heading-mobile {
+        padding: 15px 0;
+        font-family: $font-readex;
+        font-size: rem-calc(16.25px);
+        font-weight: $font-semi-bold;
+        color: $secondary-color;
+        border-bottom: 1px solid #D9D9D9;
+        border-top: 0.5px solid $primary-color;
+        line-height: rem-calc(9.1px);
+        margin-bottom: 15px;
+
+    }
+
+    .most-read-item {
+
+        .image-wrapper {
+            display: flex;
+            flex-direction: row;
+
+            span {
+                background-color: $red;
+                margin-top: 0px;
+            }
+        }
+
+        img {
+            display: block;
+            width: 105px;
+            height: 59.638px;
+
+            @include breakpoint(small) {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15px;
+            height: 15px;
+            margin-top: 1px;
+            background-color: $primary-color;
+            color: $white;
+            font-family: $font-readex;
+            text-align: center;
+            font-size: rem-calc(9px);
+        }
+
+        .article-category {
+            a {
+                font-family: $font-readex;
+                font-size: rem-calc(13px);
+                font-weight: $font-medium;
+                color: $secondary-color;
+            }
+        }
+
+        .article-title {
+            margin: 0;
+
+            a {
+                color: $primary-color;
+                display: inline-block;
+                max-width: 300px;
+                word-break: break-word;
+                font-family: $font-readex;
+                font-size: rem-calc(16px);
+                line-height: rem-calc(20px);
+                font-weight: $font-semi-bold;
+            }
+        }
+
+        .article-description {
+            font-family: $font-mizan;
+            font-size: rem-calc(18px);
+            line-height: rem-calc(18px);
+            color: #404040;
+            display: none;
+
+            @include breakpoint(small) {
+                display: flex;
+            }
+        }
+    }
+}
+
+
+.section-most-read-2 {
+    display: none;
+    margin-bottom: 70px;
+
+    @include breakpoint(small) {
+        display: block;
+    }
+
+    .category-tabs {
+        position: relative;
+        border-top: 0.5px solid $primary-color;
+
+        .title-wrapper {
+            position: absolute;
+            color: $secondary-color;
+            font-family: $font-readex;
+            font-weight: $font-semi-bold;
+            font-size: 16.25px;
+            line-height: 9.1px;
+            top: 3px;
+
+            @include breakpoint(small) {
+                font-size: rem-calc(25px);
+                line-height: rem-calc(14px);
+                top: -5px;
+            }
+        }
+
+        .react-tabs__tab-list {
+            border: none;
+            text-align: left;
+            border-bottom: 0.5px solid #d9d9d9;
+            padding: 8px 0 13px 0;
+
+            li {
+                color: #707070;
+                margin: 0 19px 0 0;
+                padding: 0;
+                font-family: $font-readex;
+                font-size: 14px;
+                font-weight: $font-semi-bold;
+
+                &:hover {
+                    border-bottom: 1px solid $red;
+                    text-decoration: none;
+                }
+            }
+
+            .react-tabs__tab--selected {
+                border-bottom: 1px solid $red;
+                border-top: 0px;
+                border-left: 0px;
+                border-right: 0px;
+
+            }
+        }
+
+        .heading-tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            div a {
+                color: #707070;
+                margin-right: 20px;
+                font-weight: 600;
+                font-size: 25px;
+
+                &:hover {
+                    border-bottom: 1px solid $red;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .most-read-articles {
+        padding: rem-calc(0 30px);
+        margin-top: 30px;
+        display: grid;
+        gap: rem-calc(30px);
+        grid-template-columns: repeat(2, 1fr);
+
+        @include breakpoint(small) {
+            margin-top: 15px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: rem-calc(60px);
+
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        .most-read-item {
+            display: flex;
+            flex-direction: column;
+
+            .image-wrapper {
+                display: flex;
+                flex-direction: row;
+
+                span {
+                    background-color: $red;
+                    margin-top: 0px;
+                }
+            }
+
+            img {
+                display: block;
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15px;
+                height: 15px;
+                margin-top: 1px;
+                background-color: $primary-color;
+                color: $white;
+                font-family: $font-readex;
+                text-align: center;
+                font-size: rem-calc(9px);
+            }
+
+            .article-category {
+                a {
+                    font-family: $font-readex;
+                    font-size: rem-calc(13px);
+                    font-weight: $font-medium;
+                    color: $secondary-color;
+                }
+            }
+
+            .article-title {
+                margin: 0;
+
+                a {
+                    color: $primary-color;
+                    display: inline-block;
+                    max-width: 300px;
+                    word-break: break-word;
+                    font-family: $font-readex;
+                    font-size: rem-calc(16px);
+                    line-height: rem-calc(20px);
+                    font-weight: $font-semi-bold;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@keyframes pulsating {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.live-sign {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    padding: 2px 25px 2px 10px;
+    background: $red;
+    font-family: $font-readex;
+    font-size: rem-calc(10px);
+    font-weight: $font-bold;
+    line-height: 1.6;
+    color: $white;
+    border-radius: $border-radius;
+    letter-spacing: 1px;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        width: 7px;
+        height: 7px;
+        margin: auto;
+        background: $white;
+        border-radius: $border-radius-round;
+        animation: blink-prayer-hour 2s linear infinite;
+    }
+}

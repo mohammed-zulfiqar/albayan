@@ -1,0 +1,39 @@
+.section-small-stories-feed {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-top: 15px;
+        border-top: 0.5px solid $gray;
+        @include breakpoint(small) {
+            grid-template-columns: repeat(9, 1fr);
+        }
+    }
+    h2 {
+        margin: 0;
+        font-family: $font-readex;
+        font-weight: $font-semi-bold;
+        font-size: rem-calc(13px);
+        color: #8E2218;
+    }
+    .item {
+        font-family: $font-readex;
+        font-weight: $font-semi-bold;
+        font-size: rem-calc(12px);
+        text-align: center;
+        @include breakpoint(small-only) {
+            margin-bottom: 15px;
+        }
+        &:first-child {
+            text-align: right;
+            @include breakpoint(small-only) {
+                display: none;
+            }
+        }
+        .name {
+            color: $primary-color;
+        }
+        .company {
+            color: #707070;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+.section-podcast-group-3 {
+    .section-title {
+        margin: 0;
+        font-family: $font-readex;
+        font-weight: $font-semi-bold;
+        line-height: 1.9;
+        color: $secondary-color;
+        border-top: 0.5px solid $primary-color;
+        border-bottom: 0.5px solid #D9D9D9;
+    }
+
+    .item {
+        position: relative;
+        padding: 15px 0 30px 0;
+        border-bottom: 0.5px solid #D9D9D9;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        @include breakpoint(small) {
+            display: flex;
+            gap: 30px;
+        }
+
+        .right-column {
+            @include breakpoint(small) {
+                display: flex;
+                width: 50%;
+            }
+
+            .episode-number {
+                color: #D9D9D9;
+                font-family: $font-readex;
+                font-size: rem-calc(80px);
+                font-weight: $font-regular;
+                line-height: rem-calc(20px);
+                margin-top: 30px;
+                @include breakpoint(small-only) {
+                    display: none;
+                }
+            }
+
+
+        }
+
+        .left-column {
+            @include breakpoint(small) {
+                width: 50%;
+            }
+        }
+
+        .author-column {
+            @include breakpoint(small) {
+                width: 50%;
+                margin-right: auto;
+
+            }
+
+            .section-author {
+                @include breakpoint(small-only) {
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                }
+            }
+
+            h4 {
+                color: $secondary-color;
+
+                a {
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        .image-column {
+            @include breakpoint(small) {
+                width: 25%;
+                margin-right: auto;
+            }
+
+            figure {
+                .watch-live {
+                    width: 100px;
+                    height: 33px;
+                    top: auto;
+                    left: 20px;
+                    bottom: 20px;
+                }
+            }
+
+            .time {
+                font-family: $font-readex;
+                font-size: rem-calc(12px);
+                letter-spacing: 1px;
+                text-align: left;
+                color: #751713;
+            }
+        }
+
+        .content-column {
+            @include breakpoint(small) {
+                width: 50%;
+            }
+
+            .meta {
+                font-family: $font-readex;
+                font-size: rem-calc(13px);
+                font-weight: $font-medium;
+                color: #8E2218;
+            }
+
+            h3 {
+                margin-top: 10px;
+                font-family: $font-mizan-semi-bold;
+                font-size: rem-calc(26px);
+                line-height: rem-calc(32px);
+                color: $primary-color;
+
+                @include breakpoint(small-only) {
+                    margin-bottom: 0;
+                }
+
+                span {
+                    display: block;
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .social-shares {
+            left: 0;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            @include breakpoint(small) {
+                left: 60px;
+            }
+        }
+    }
+}

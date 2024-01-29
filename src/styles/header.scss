@@ -1,0 +1,255 @@
+@keyframes blink-prayer-hour {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink-prayer-label {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.page-wrapper-home {
+    .section-header {
+        &.sticky {
+            .header-normal {
+                .container {
+                    .logo-wrapper {
+                        img {
+                            position: relative;
+                            top: 5px;
+                            width: 84px;
+                        }
+                    }
+                }
+            }
+        }
+        .header-normal {
+            .container {
+                .logo-wrapper {
+                    img {
+                        position: relative;
+                        top: 5px;
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: $white;
+    z-index: 9;
+
+    &.sticky {
+        .header-normal {
+            padding-bottom: 0;
+            box-shadow: $box-shadow;
+        }
+    }
+
+    .header-normal {
+        padding-bottom: 20px;
+        transition: .1s all;
+
+        @include breakpoint(small) {
+            padding-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+
+            .navigation {
+                display: none;
+                @include breakpoint(small) {
+                    display: block;
+                    width: 40%;
+                    font-weight: $font-semi-bold;
+                    font-size: rem-calc(14px);
+                    font-family: $font-readex;
+                }
+
+                ul {
+                    display: flex;
+                    gap: 22px;
+                    justify-content: left;
+                    list-style: none;
+                }
+
+                li {
+                    flex-shrink: 0;
+                }
+
+                a {
+                    display: inline-block;
+                    padding: 1px 0;
+                    color: $primary-color;
+                    text-decoration: none;
+                    border-bottom: 1px solid transparent;
+
+                    &:hover {
+                        border-bottom: 1px solid $red;
+                    }
+                }
+            }
+
+            .logo-wrapper {
+                width: 20%;
+                text-align: center;
+
+                img {
+                    position: relative;
+                    top: 5px;
+                    width: 84px;
+                    transition: .05s all;
+                }
+            }
+
+            .additional {
+                display: flex;
+                width: 40%;
+
+                .praying-hour {
+                    display: inline-block;
+                    position: relative;
+                    width: 60px;
+                    height: 20px;
+                    padding: 2px 5px;
+                    background: $secondary-color;
+                    font-family: $font-readex;
+                    font-size: rem-calc(10px);
+                    font-weight: $font-bold;
+                    letter-spacing: 1px;
+                    color: $white;
+                    border-radius: $border-radius;
+
+                    @include breakpoint(small) {
+                        right: -90px;
+                    }
+
+                    span {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: auto;
+
+                        &.hour {
+                            animation: blink-prayer-hour 8s linear infinite;
+                        }
+
+                        &.label {
+                            animation: blink-prayer-label 8s linear infinite;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-live {
+        display: none;
+        padding-bottom: 30px;
+        background: $primary-color;
+
+        .container {
+            display: flex;
+            align-items: center;
+
+            .navigation {
+                width: 60%;
+
+                ul {
+                    display: flex;
+                    gap: 25px;
+                    justify-content: left;
+                    list-style: none;
+                }
+
+                a {
+                    display: inline-block;
+                    padding: 1px 0;
+                    color: $white;
+                    text-decoration: none;
+                    border-bottom: 1px solid transparent;
+
+                    &:hover {
+                        border-bottom: 1px solid $red;
+                    }
+                }
+            }
+
+            .additional {
+                display: flex;
+                gap: 30px;
+                width: 50%;
+                height: 25px;
+                align-items: center;
+
+                h2 {
+                    margin: 0;
+                    font-size: 28px;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

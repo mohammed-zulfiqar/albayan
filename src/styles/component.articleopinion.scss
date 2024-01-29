@@ -1,0 +1,107 @@
+.article-opinion {
+    margin-bottom: 0px;
+
+    h1 {
+        padding-bottom: 60px;
+        font-family: $font-mizan-semi-bold;
+        font-size: rem-calc(43.75px);
+        line-height: rem-calc(17.5px);
+        text-align: center;
+        color: $secondary-color;
+        border-bottom: 0.5px solid #a3a3a4;
+
+        @include breakpoint(small) {
+            font-size: rem-calc(70px);
+            line-height: rem-calc(28px);
+            margin-bottom: 0px;
+
+        }
+    }
+
+    .author {
+        align-items: center;
+        border-bottom: 0.5px solid #d9d9d9;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(small) {
+            display: grid;
+            grid-template-columns: 2.3fr 2fr;
+        }
+
+        h3 {
+            margin: 0 auto;
+            font-family: $font-readex;
+            font-size: rem-calc(25px);
+            line-height: rem-calc(14px);
+            color: $secondary-color;
+
+            @include breakpoint(small) {
+                font-size: rem-calc(30px);
+                color: #8E2218;
+                margin: 0 auto 0 0;
+
+            }
+        }
+
+        img {
+            margin: 30px auto;
+
+            @include breakpoint(small) {
+                margin: 30px auto;
+
+            }
+        }
+    }
+
+    .article-title {
+        font-family: $font-mizan-medium;
+        color: $primary-color;
+        text-align: center;
+        line-height: 32px;
+        font-size: 28px;
+        margin-bottom: 120px;
+
+        &.section-page {
+            color: #000;
+            font-weight: $font-semi-bold;
+
+            margin-bottom: 105px;
+            line-height: 38px;
+            font-size: 34px;
+
+            @include breakpoint(small) {
+                line-height: 54px;
+                font-size: 48px;
+            }
+
+            span {
+                font-weight: $font-mizan;
+                font-size: 13px;
+
+                @include breakpoint(small) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        @include breakpoint(small) {
+            font-size: 48px;
+            line-height: 54px;
+
+        }
+
+        span {
+            color: #8E2218;
+            margin-top: 5px;
+
+        }
+    }
+
+
+
+    .article-header {
+        border-bottom: 0;
+    }
+
+}

@@ -1,0 +1,139 @@
+.section-podcast-player {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #F3EEE9;
+    z-index: 9;
+    @include breakpoint(small) {
+        position: static;
+    }
+    .container {
+        @include breakpoint(small) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .right-column {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 15px;
+        @include breakpoint(small) {
+            width: 25%;
+            margin-bottom: 0;
+        }
+        .description {
+            font-family: $font-readex;
+            font-size: rem-calc(13px);
+            font-weight: $font-medium;
+            text-align: center;
+            color: #8E2218;
+            span {
+                display: block;
+                color: $primary-color;
+            }
+        }
+        .podcast-icon {
+            margin-right: auto;
+            @include breakpoint(small) {
+                position: absolute;
+                right: -75px;
+            }
+            img {
+                display: block;
+            }
+        }
+    }
+    .center-column {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        @include breakpoint(small) {
+            width: 50%;
+            gap: 30px;
+        }
+        .podcast-author {
+            display: none;
+            width: auto;
+            height: 50px;
+            @include breakpoint(small) {
+                display: block;
+                height: 100px;
+            }
+        }
+        .rhap_container {
+            direction: ltr;
+            box-shadow: none;
+            background: none;
+            border: 0.5px solid $gray;
+            border-radius: 15px;
+            .rhap_main {
+                @include breakpoint(small-only) {
+                    flex-direction: row;
+                }
+                .rhap_time {
+                    @include breakpoint(small-only) {
+                        display: none;
+                    }
+                }
+                .rhap_controls-section {
+                    @include breakpoint(small-only) {
+                        flex: unset;
+                    }
+                }
+            }
+            .rhap_progress-indicator {
+                background: $secondary-color;
+            }
+            .rhap_additional-controls {
+                display: none;
+            }
+            .rhap_main-controls {
+                svg {
+                    color: $secondary-color;
+                }
+                .rhap_main-controls-button {
+                    &.rhap_rewind-button,
+                    &.rhap_forward-button {
+                        @include breakpoint(small-only) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .rhap_progress-filled {
+                background-color: rgba(221, 221, 221, 0.5);
+            }
+            .rhap_volume-controls {
+                @include breakpoint(small-only) {
+                    display: none;
+                }
+            }
+            .rhap_volume-container {
+                svg {
+                    color: $secondary-color;
+                }
+                .rhap_volume-bar {
+                    background-color: rgba(221, 221, 221, 0.5);
+                }
+                .rhap_volume-indicator {
+                    background: $secondary-color;
+                }
+            }
+        }
+    }
+    .left-column {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+            width: 25%;
+            text-align: left;
+        }
+        .radio-image {
+            width: auto;
+            height: 70px;
+        }
+    }
+}

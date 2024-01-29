@@ -1,0 +1,135 @@
+.section-man-of-the-match {
+
+    .category-tabs {
+        border-top: 0.5px solid $secondary-color;
+
+        .title-wrapper {
+            position: absolute;
+            color: $secondary-color;
+            font-size: 18px;
+            line-height: 14px;
+            font-family: $font-readex;
+            line-height: 14px;
+            font-weight: $font-semi-bold;
+
+            @include breakpoint(small) {
+                font-size: 25px;
+            }
+        }
+
+        .react-tabs__tab-list {
+            border: none;
+            text-align: left;
+            border-bottom: 0.5px solid #d9d9d9;
+            padding-bottom: 15px;
+
+            li {
+                color: #707070;
+                padding-top: 15px;
+                font-family: $font-readex;
+                font-weight: $font-semi-bold;
+                font-size: 14px;
+
+                &:hover {
+                    border-bottom: 1px solid $red;
+                    text-decoration: none;
+                }
+
+                &:active {
+                    border-bottom: 1px solid $red;
+                    text-decoration: none;
+                }
+            }
+
+            .react-tabs__tab--selected {
+                border: none;
+            }
+        }
+
+        .heading-tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            div a {
+                color: #707070;
+                margin-right: 20px;
+                font-weight: 600;
+                font-size: 25px;
+
+                &:hover {
+                    border-bottom: 0.5px solid $red;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .most-read-articles {
+        margin-top: 20px;
+        grid-template-columns: auto auto auto auto auto auto;
+        gap: 40px;
+
+        @include breakpoint(small) {
+            display: grid;
+        }
+
+        .most-read-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 45px;
+
+            @include breakpoint(small) {
+                margin-bottom: 0;
+            }
+
+
+
+            img {
+                display: block;
+                margin-bottom: 10px;
+
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5px;
+                background-color: $primary-color;
+                color: $white;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .article-category {
+                a {
+                    color: $secondary-color;
+                }
+            }
+
+            .article-title {
+                margin: 0;
+                margin-top: 10px;
+
+                a {
+                    color: $primary-color;
+                    display: inline-block;
+                    max-width: 300px;
+                    word-break: break-word;
+                    font-size: 20px;
+                    line-height: 21px;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                }
+            }
+
+            .article-description {
+                font-size: 18px;
+                line-height: 16px;
+            }
+        }
+    }
+}

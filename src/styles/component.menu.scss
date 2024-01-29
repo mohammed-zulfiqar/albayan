@@ -1,0 +1,269 @@
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 30px;
+    top: 15px;
+    padding: 15px;
+    border: 1px solid rgba($black, 0.3);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .1s all;
+
+    @include breakpoint(small) {
+        left: 15px;
+    }
+
+    &:hover {
+        background: $red;
+
+        .bm-burger-bars {
+            background-color: $white;
+            opacity: 1 !important;
+        }
+    }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background-color: #FF1B02;
+    width: 15px;
+    height: 2px !important;
+    margin: auto;
+
+    &:first-child {
+        top: 14px !important;
+    }
+
+    &:nth-child(2) {
+        top: 20px !important;
+    }
+
+    &:last-child {
+        top: 26px !important;
+    }
+}
+
+.bm-burger-bars-hover {
+    background: #a90000;
+}
+
+.bm-cross-button {
+    top: 15px !important;
+    left: 30px !important;
+    right: auto !important;
+    height: 45px !important;
+    width: 45px !important;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    transition: .1s all;
+
+    @include breakpoint(small) {
+        left: 15px !important;
+    }
+
+    &:hover {
+        background-color: #FF1B02;
+
+        .bm-cross {
+            background: $white;
+        }
+    }
+
+    &>span {
+        top: 14px !important;
+        right: 20px !important;
+    }
+}
+
+.bm-cross {
+    background: #ff1b02;
+    width: 2px !important;
+    height: 15px !important;
+}
+
+/*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+.bm-menu-wrap {
+    position: fixed;
+    width: 100% !important;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: $box-shadow;
+
+    @include breakpoint(small) {
+        width: 600px !important;
+    }
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background: $white;
+    font-size: 1.15em;
+
+    @include breakpoint(small) {
+        height: 80vh;
+        padding-top: 70px;
+    }
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: $primary-color;
+    padding: 0 30px;
+
+    @include breakpoint(small) {
+        padding: 0px;
+    }
+}
+
+/* Individual item */
+.bm-item {
+    display: inline-block;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    height: calc(80vh - 30px);
+    margin-top: 90px;
+    padding: 0 !important;
+    overflow-y: scroll;
+
+    @include breakpoint(small) {
+        margin-top: 0;
+        padding: 0 135px !important;
+    }
+
+    h5 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-top: 15px;
+        padding-right: 15px;
+        border-top: 1px solid #a3a3a4;
+        color: $primary-color;
+        text-align: right;
+        font-family: $font-readex;
+        font-size: 16px;
+        font-weight: $font-semi-bold;
+    }
+
+    .news-wrapper {
+        display: flex;
+        padding-right: 15px;
+        padding-bottom: 45px;
+
+        .item-col {
+            &:nth-child(2) {
+                margin-right: 40px;
+                border-right: 1px solid #D9D9D9;
+                padding-right: 40px;
+            }
+
+            ul {
+                padding: 0;
+                margin: 0 0 10px 0;
+
+                li {
+                    line-height: rem-calc(28px);
+                    list-style: none;
+
+                    a {
+                        color: $primary-color;
+                        text-align: right;
+                        font-family: $font-readex;
+                        font-size: rem-calc(14px);
+                        font-weight: $font-regular;
+                    }
+                }
+            }
+        }
+    }
+
+    .economy-wrapper {
+        display: flex;
+        padding-right: 15px;
+
+        .item-col {
+            &:nth-child(2) {
+                margin-right: 40px;
+                border-right: 1px solid #d9d9d9;
+                padding-right: 40px;
+            }
+
+            ul {
+                padding: 0;
+                margin: 0 0 10px 0;
+
+                li {
+                    line-height: rem-calc(28px);
+                    list-style: none;
+
+                    a {
+                        color: $primary-color;
+                        text-align: right;
+                        font-family: $font-readex;
+                        font-size: 14px;
+                        font-weight: $font-regular;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.search-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 114px;
+    padding: 30px 15px;
+    background-color: $black;
+
+    @include breakpoint(small) {
+        height: 20vh;
+    }
+
+    form {
+        display: flex;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        height: 40px;
+        margin: 0;
+        background-color: $black;
+        font-size: rem-calc(32px);
+        color: $white;
+        border: none;
+        outline: none;
+        caret-color: $white;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        color: $primary-color;
+        border: 1px solid rgba($white, 0.4);
+        border-radius: 15px;
+        padding: 12px;
+
+        svg {
+            color: $white;
+        }
+    }
+}

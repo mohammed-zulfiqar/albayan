@@ -1,0 +1,211 @@
+.section-articles-writers {
+    background-color: $white;
+    margin-top: 0px;
+
+    &.section-page {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    @include breakpoint(small) {
+        background-color: #fbfaf8;
+    }
+
+    h2 {
+        display: none;
+        margin: 0;
+        color: #8E2218;
+        font-size: rem-calc(70px);
+        font-family: $font-mizan;
+        font-weight: 600;
+        text-align: center;
+        border-top: 0.5px solid $gray;
+        border-bottom: 0.5px solid $light-gray;
+
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+
+    .article-news {
+        padding: 30px 0;
+        border-bottom: 1px solid $light-gray;
+
+        @include breakpoint(small) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .article-news-item {
+            text-align: center;
+            border-top: 1px solid $light-gray;
+            padding: 15px 30px 15px 30px;
+
+            @include breakpoint(small) {
+                border-right: 1px solid $light-gray;
+                border-top: 0;
+                border-bottom: none;
+                padding: 30px;
+                padding-bottom: 0;
+            }
+
+            &:first-child {
+                border: none;
+                padding: 15px 30px 75px 30px;
+                border-bottom: 1px solid $light-gray;
+
+                @include breakpoint(small) {
+                    padding: 30px 70px;
+                    border: none;
+                    border-bottom: 0;
+
+                }
+
+                h3 {
+                    margin: 0;
+
+                    a {
+                        font-size: rem-calc(34px);
+                        line-height: rem-calc(38px);
+                        color: $black;
+
+                        @include breakpoint(small) {
+                            font-size: rem-calc(48px);
+                            line-height: rem-calc(52px);
+
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                @include breakpoint(small) {
+                    padding: 30px 70px;
+                }
+                .article-news-description {
+                    font-size: rem-calc(22px);
+                    line-height: rem-calc(26px);
+                }
+            }
+
+            h6 {
+                margin: 0;
+
+                a {
+                    text-align: center;
+                    font-size: rem-calc(13px);
+                    color: #8e2218;
+                    font-family: $font-readex;
+                    font-weight: $font-medium;
+                    line-height: normal;
+                }
+            }
+
+            h3 {
+                margin: 0;
+
+                a {
+                    color: $primary-color;
+                    text-align: center;
+                    line-height: 44px;
+                    font-family: $font-mizan-semi-bold;
+                    font-size: rem-calc(26px);
+                    line-height: rem-calc(32px);
+                    margin: 0;
+
+                    @include breakpoint(small) {
+                        font-size: rem-calc(26px);
+                        line-height: rem-calc(32px);
+
+                    }
+                }
+
+                span {
+                    color: #8e2218;
+                    margin-top: 5px;
+                }
+            }
+
+            a img {
+                object-fit: contain;
+            }
+
+            .article-news-description {
+                color: #404040;
+            }
+        }
+    }
+
+    .article-writers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: $white;
+        border-bottom: none;
+        padding-bottom: 30px;
+
+        @include breakpoint(small) {
+            grid-template-columns: repeat(4, 1fr);
+            background-color: #fbfaf8;
+        }
+
+        .writer {
+            text-align: center;
+            border-right: 1px solid $light-gray;
+            margin-top: 30px;
+
+            &:first-child {
+                border: none;
+            }
+
+            &:nth-last-child(2) {
+                border: none;
+            }
+
+            h3 {
+                line-height: rem-calc(24px);
+                margin: 0;
+                font-family: $font-mizan-semi-bold;
+                font-size: rem-calc(20px);
+
+                @include breakpoint(small) {
+                    max-width: 60%;
+                    margin: 0 auto;
+                    font-size: rem-calc(26px);
+                    line-height: rem-calc(32px);
+                }
+            }
+
+            a img {
+                margin-top: 30px;
+                width: 120px;
+                height: 80px;
+
+                @include breakpoint(small) {
+                    margin-top: 15px;
+                    width: 149.982px;
+                    height: 100px;
+
+                }
+            }
+
+            .author {
+
+                a {
+                    color: #8E2218;
+                    text-align: center;
+
+
+
+                }
+            }
+
+            .article-category {
+                a {
+                    color: $primary-color;
+
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

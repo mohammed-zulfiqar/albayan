@@ -1,0 +1,93 @@
+.social-shares {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: -75px;
+    height: 50px;
+    overflow: hidden;
+    z-index: 1;
+
+    @include breakpoint(small) {
+        display: block;
+    }
+
+    &:hover {
+        height: 400px;
+        transition: 0.4s all;
+
+        a {
+            &:first-child {
+                background-color: #FF1B02;
+                color: $white;
+            }
+        }
+    }
+
+    a,
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: $white;
+        font-size: 50px;
+        color: $primary-color;
+        border: 0.5px solid rgba($black, 0.3);
+        border-radius: 15px;
+        padding: 12px;
+        transition: .1s all;
+        cursor: pointer;
+
+        @include breakpoint (small) {
+            margin-top: 5px;
+        }
+
+        &:first-child {
+            color: $red;
+        }
+
+        &:hover {
+            color: #D94737;
+            fill: #D94737;
+        }
+
+        &:active {
+            color: #FF1B02;
+            fill: #FF1B02;
+        }
+    }
+}
+
+
+.mobile-social-shares {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+
+    @include breakpoint(small) {
+        display: none;
+    }
+
+    .social-shares {
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 5px;
+        width: 45px;
+        height: auto;
+
+        &:hover {
+            width: 250px;
+
+            svg {
+                width: 100%;
+            }
+        }
+    }
+
+    .text-to-speech-icon {
+        position: static !important;
+    }
+}

@@ -1,0 +1,183 @@
+.section-chosen-articles {
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding: 20px 0;
+        font-family: $font-readex;
+        font-size: rem-calc(25px);
+        line-height: rem-calc(14px);
+        font-weight: $font-semi-bold;
+        color: $secondary-color;
+        border-bottom: 1px solid $light-gray;
+        border-top: 1px solid $light-gray;
+    }
+
+    .swiper-wrapper {
+        gap: unset;
+
+        @include breakpoint(small) {
+            gap: 30px;
+
+        }
+    }
+
+    .slide {
+        display: flex;
+        flex-direction: column;
+
+
+
+        .article-item {
+            display: flex;
+            flex-direction: column;
+
+            .article-with-border-left {
+                border-left: 1px solid $light-gray;
+                padding-left: 30px;
+
+
+                .article-category {
+                    margin: 0;
+                    padding: rem-calc(5px 0);
+                    font-family: $font-readex;
+                    font-size: rem-calc(13px);
+                    font-weight: $font-medium;
+
+                    a {
+                        color: #8E2218;
+                    }
+                }
+
+
+                .article-image img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 165px;
+
+                }
+
+                .article-title {
+                    margin: 0;
+                    margin-bottom: rem-calc(20px);
+
+                    a {
+                        font-family: $font-mizan-semi-bold;
+                        color: $primary-color;
+                        max-width: 300px;
+                        font-size: rem-calc(26px);
+                        line-height: rem-calc(32px);
+                        margin-bottom: rem-calc(25px);
+                    }
+                }
+            }
+        }
+
+        .article-group {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            padding-top: 15px;
+            border-top: 1px solid $light-gray;
+            padding-left: 15px;
+
+            @include breakpoint (small) {
+                border-top: none;
+                padding-left: 0;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+
+                height: 100%;
+                width: 1px;
+                background-color: $light-gray;
+
+                @include breakpoint (small) {
+                    top: 0;
+                }
+
+            }
+
+
+            &:first-child {
+                &:after {
+                    display: none;
+                }
+
+                .group-icon {
+                    padding-right: 0;
+                }
+            }
+
+            .article-item {
+                @include breakpoint(small) {
+                    padding-left: 30px;
+                }
+
+                .article-category {
+                    margin: 0;
+                    padding: 15px 0 5px 0;
+                    font-family: $font-readex;
+                    font-size: rem-calc(13px);
+                    font-weight: $font-medium;
+
+                    @include breakpoint(small) {
+                        padding: 20px 0 5px 0;
+
+                    }
+
+                    a {
+                        color: #8E2218;
+                    }
+                }
+
+                .article-image {
+                    width: 80%;
+
+                    a {
+                        display: block;
+                    }
+
+                    img {
+                        display: block;
+                        object-fit: cover;
+                        height: 60px;
+                        width: 105px;
+
+                    }
+                }
+
+                .article-title {
+                    margin: 0;
+
+                    a {
+                        color: $primary-color;
+                        display: inline-block;
+                        max-width: 300px;
+                        word-break: break-word;
+                        font-family: $font-readex;
+                        font-size: rem-calc(16px);
+                        font-weight: $font-semi-bold;
+                        line-height: rem-calc(20px);
+                    }
+                }
+
+                .article-description {
+                    font-family: $font-mizan;
+                    font-size: rem-calc(18px);
+                    line-height: rem-calc(18px);
+                    color: #404040;
+                    display: none;
+
+                    @include breakpoint(small) {
+                        display: block;
+                    }
+
+                }
+            }
+        }
+    }
+}

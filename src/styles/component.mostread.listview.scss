@@ -1,0 +1,113 @@
+.section-most-read-list-view {
+    margin-bottom: 60px;
+    margin-top: 60px;
+
+    @include breakpoint(small) {
+        margin-bottom: 70px;
+        margin-top: 100px;
+    }
+
+    .category-tabs {
+        border-top: 0.5px solid $secondary-color;
+        position: relative;
+
+        .title-wrapper {
+            position: absolute;
+            color: $secondary-color;
+            font-size: 16.25px;
+            line-height: 9.1px;
+            font-family: $font-readex;
+            font-weight: $font-semi-bold;
+            top: 8px;
+
+            @include breakpoint(small) {
+                font-size: rem-calc(25px);
+                line-height: rem-calc(14px);
+                top: -5px;
+            }
+        }
+
+        .react-tabs__tab-list {
+            border: none;
+            text-align: left;
+            border-bottom: 0.5px solid #d9d9d9;
+            padding-bottom: 15px;
+
+            li {
+                color: #707070;
+                padding-top: 15px;
+                font-family: $font-readex;
+                font-weight: $font-semi-bold;
+                font-size: 14px;
+
+                &:hover {
+                    border-bottom: 0.5px solid $red;
+                    text-decoration: none;
+                }
+            }
+
+            .react-tabs__tab--selected {
+                border: none;
+            }
+        }
+
+        .heading-tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            div a {
+                color: #707070;
+                margin-right: 20px;
+                font-weight: 600;
+                font-size: 25px;
+
+                &:hover {
+                    border-bottom: 1px solid $red;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .most-read-articles {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 0;
+        border-bottom: 0.5px solid #d9d9d9;
+
+        .article-title {
+            margin: 0;
+            white-space: nowrap;
+
+            a {
+                color: $secondary-color;
+                display: inline-block;
+                max-width: 300px;
+                word-break: break-word;
+                font-family: $font-mizan-medium;
+                line-height: rem-calc(32px);
+                font-size: rem-calc(16px);
+
+                @include breakpoint(small) {
+                    font-size: rem-calc(42px);
+                    line-height: rem-calc(46px);
+
+                }
+            }
+        }
+
+        .article-description {
+            font-family: $font-mizan;
+            font-size: rem-calc(24px);
+            line-height: rem-calc(26px);
+            color: $primary-color;
+
+            @include breakpoint(small) {
+                font-size: rem-calc(42px);
+                line-height: rem-calc(46px);
+            }
+        }
+    }
+}
