@@ -1,0 +1,27 @@
+{
+  "name": "albayan",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@coreui/react": "^5.0.0-alpha.0",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-burger-menu": "^3.0.9",
+    "react-dom": "18.2.0",
+    "react-h5-audio-player": "^3.8.6",
+    "react-icons": "^4.10.1",
+    "react-rss-podcast-player": "^1.0.0",
+    "react-tabs": "^6.0.2",
+    "sass": "^1.64.1",
+    "styled-off-canvas": "^1.2.0",
+    "swiper": "^10.2.0"
+  }
+}
